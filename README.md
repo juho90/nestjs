@@ -27,3 +27,10 @@ $ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 $ Get-ExecutionPolicy -Scope CurrentUser
 > RemoteSigned 보이면 성공
 ```
+
+## Project setup
+
+```sh
+$ npm install
+$ npm run start
+```
