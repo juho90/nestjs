@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { JwtModule } from '@nestjs/jwt';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { AppService } from './app.service';
         signOptions: { expiresIn: '1h' }, // 토큰 유효기간 1시간
       }),
     }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
