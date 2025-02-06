@@ -1,3 +1,11 @@
 프로젝트 생성
 
 npx @nestjs/cli new .
+
+Auth 생성
+
+nest g resource auth --no-spec
+
+User 생성
+
+nest g resource users --no-spec
