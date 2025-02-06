@@ -39,4 +39,10 @@ export class AuthController {
   remove(@Param('id') id: string) {
     return this.authService.remove(+id);
   }
+
+  @Post('login')
+  async login(@Body() body: { email: string; password: string }) {
+    const user = await this.authService.validate(body.email, body.password);
+    return this.authService.login(user);
+  }
 }
