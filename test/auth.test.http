@@ -1,0 +1,16 @@
+### 🔐 1. 로그인 요청 (JWT 발급)
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+
+### 🛠 2. 인증이 필요한 API 요청 (JWT 포함)
+GET http://localhost:3000/protected-route
+Authorization: Bearer {{access_token}}
+
+### ✅ 3. 잘못된 토큰으로 요청 (401 Unauthorized 예상)
+GET http://localhost:3000/protected-route
+Authorization: Bearer invalid_token
